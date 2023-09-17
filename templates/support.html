@@ -1,0 +1,88 @@
+{% extends "index.html" %}
+
+{% block body %}
+
+<div class="support-page">
+
+    <div class="support-info">
+        <p>Helpline Numbers:</p>
+        <div>
+            <span class="material-symbols-outlined">medical_services</span>
+            112 - National Emergency Number 
+        </div>
+        
+        <div>
+            <span class="material-symbols-outlined">local_police</span>
+            100 - Police  
+        </div>
+        
+        <div>
+            <span class="material-symbols-outlined">fire_truck</span>
+            101 - Fire 
+        </div>
+        
+        <div>
+            <span class="material-symbols-outlined">ambulance</span>
+            102 - Ambulance 
+        </div>
+        
+        <div>
+            <span class="material-symbols-outlined">woman</span>
+            1091 - Women Helpline 
+        </div>
+        
+        <div>
+            <span class="material-symbols-outlined">car_crash</span>
+            1073 - Road Accident Emergency Service
+        </div>
+    </div>
+    
+    
+    <div class="support-right">
+        <div class="support-right-bot">
+            Ask me a medical question..
+            <form action="/support" method="post">
+                {% csrf_token %}
+                <textarea name="any-bot-input" wrap="soft" placeholder="For example, you can ask about a specific condition, medication, or general health advice...." required></textarea>
+                <button type="submit" class="">Search</button>
+            </form>
+            <br>
+            Result:
+            <div class="any-bot-output">
+                <p>
+                    {{clickMsg}}
+                </p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<div class="feedback-form">
+    <div class="actual-feedback-form">
+        <p>Customer Feedback</p>
+        <form action="/support" method="post">
+            {% csrf_token %}
+            <div class="input-name">
+                Full Name
+                <input type="text" name="name" id="name" class="input-name-css" required>
+            </div>
+            <div class="input-symptoms">
+                Describe your feedback
+                <textarea name="symptoms" wrap="soft" class="input-symptoms-css" placeholder="Tell us what prompted this feedback..." required></textarea>
+            </div>
+            <button type="submit" class="input-submit-button">
+                Submit
+            </button>
+        </form>
+    </div>
+</div>
+
+
+
+
+
+
+
+{% endblock body %}

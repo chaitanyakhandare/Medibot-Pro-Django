@@ -1,0 +1,44 @@
+{% extends "index.html" %}
+
+{% block body %}
+
+<div class="home-page">
+
+    <div class="home-left">
+        <img src="/static/homepageimg.png" alt="home Img">
+    </div>
+
+
+    <div class="home-right">
+        <p id="home-main-heading">
+            We take care of your healthy life.
+        </p>
+        <hr>
+        <p id="home-welcome">Welcome to MediBot Pro</p>
+        <p id="home-normal-text">
+            Discover our cutting-edge AI bots:
+            <br>
+            1. <strong>Medical Diagnosis Bot</strong> - Your Virtual Doctor
+            <br>
+            Enter your symptoms, and receive instant insights about your health condition.
+            <br>
+            2. <strong>Physiotherapy Bot</strong> - Your Pain Relief Partner
+            <br>
+            Describe your pain, and get customized exercises to help you heal.
+            Experience healthcare in the future, today. Start a conversation now!
+        </p>
+
+        <div class="bot-buttons">
+            <a href="/medicalDiag">
+                <h4>Medical Diagnosis Bot</h4>
+            </a>
+            <a href="/physiobot">
+                <h4>Physiotherapy Bot</h4>
+            </a>
+        </div>
+    </div>
+
+</div>
+
+
+{% endblock body %}

@@ -1,0 +1,92 @@
+{% extends "index.html" %}
+
+{% block body %}
+
+<div class="bot-info">
+    This is a healthcare chatbot that uses Worqhat's model to interact with users, ask about their symptoms, and provide preliminary health advice and information.
+</div>
+
+<div class="medical-container">
+    
+    <div class="medical-left">
+        <div class="medical-title">
+            Medical Diagnosis Bot
+        </div>
+        
+        <form method="post" action="/medicalDiag"> 
+            {% csrf_token %}
+            <!-- INPUT FIELDS -->
+            <div class="input-fields">
+                
+                <div class="input-name">
+                    Name
+                    <input type="text" name="name" id="name" class="input-name-css" required>
+                </div>
+                
+                <div class="input-age">
+                    Age
+                    <input type="number" name="age" id="age" class="input-number-css" required>
+                </div>
+                
+                <div class="input-gender">
+                    Gender
+                    <select name="gender" id="gender" class="input-select-css" required>
+                        <option selected="selected" disabled>Choose Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="input-symptoms">
+                    Please tell us about your symptoms
+                    <textarea name="symptoms" rows="14" cols="12" wrap="soft" class="input-symptoms-css" required> </textarea>
+                </div>
+                
+                <div class="input-duration">
+                    Duration of your Symptoms (in days)
+                    <input type="number" name="duration" id="duration" class="input-number-css" required>
+                </div>
+                
+                <div class="input-severity">
+                    Severity of your symptoms
+                    <select name="severity" id="severity" class="input-select-css" required>
+                        <option selected="selected" disabled>Choose Severity</option>
+                        <option value="low">Low</option>
+                        <option value="mild">Mild</option>
+                        <option value="severe">Severe</option>
+                    </select>   
+                </div>
+                
+                <button type="submit" class="input-submit-button">
+                    Diagnose the disease
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <div class="medical-right">
+        <img src="/static/doctorImg2.png" alt="doctor Image">
+    </div>
+    
+</div>
+
+
+<p id="diag-result-text">Result will be shown after clicking on Find Result button.:</p>
+<div class="diagnosis-output">
+
+    <div class="diagnosis-actual-output">
+        <p>
+            {{ output }}
+        </p>
+    </div>
+
+    <div class="diagnosis-output-image">
+
+        <img src="/static/diagOutput.png" alt="doctor output">
+    </div>
+</div>
+    
+    
+    
+    {% endblock body %}

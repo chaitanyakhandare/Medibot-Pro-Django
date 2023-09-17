@@ -1,0 +1,95 @@
+{% extends "index.html" %}
+
+{% block body %}
+
+<div class="report-page">
+
+    <div class="report-form">
+        <p>Emergency Report</p>
+        <div class="input-name">
+            Full Name
+            <input type="text" name="name" id="name" class="input-name-css" required>
+        </div>
+
+        <div class="input-name">
+            Enter your Phone no.
+            <input type="text" name="number" id="number" class="input-name-css" pattern="[1-9]{1}[0-9]{9}"
+                maxlength="10" required>
+        </div>
+
+        <div class="input-name">
+            State
+            <input type="text" name="name" id="name" class="input-name-css" required>
+        </div>
+
+        <div class="input-name">
+            City
+            <input type="text" name="name" id="name" class="input-name-css" required>
+        </div>
+
+        <div class="input-name">
+            Pincode
+            <input type="text" name="number" id="number" class="input-name-css" pattern="[1-9]{1}[0-9]{9}" maxlength="6"
+                required>
+        </div>
+
+        <div class="input-symptoms">
+            Description of Report
+            <textarea name="symptoms" wrap="soft" class="input-symptoms-css" placeholder="Tell us more about this..."
+                required></textarea>
+        </div>
+
+        <button type="submit" class="input-submit-button">
+            Report
+        </button>
+    </div>
+
+    <div class="report-right">
+        
+        <p> 
+            <span class="material-symbols-outlined">menu_book</span>
+            Guidelines for Reporting:
+        </p>
+        
+        <ul>
+            <li>Please provide accurate and detailed information.</li>
+            <li>Ensure your location details are precise.</li>
+            <li>If the situation is critical, contact local authorities immediately.</li>
+        </ul>
+        
+        <br>
+        
+        <p>
+            <span class="material-symbols-outlined">lock</span>
+            Privacy and Security:
+        </p>
+        <h4>
+            Your privacy is our priority. Reports are confidential and only shared with authorized parties for necessary action.
+        </h4>
+        
+        <br>
+        
+        <p>
+            <span class="material-symbols-outlined">error</span>
+            Disclaimer:
+        </p>
+        <h4>
+            While we strive to respond promptly, this feature is not a substitute for emergency services. In case of immediate danger, contact local authorities.
+        </h4>
+
+        <br>
+
+        <p>
+            Thank you for helping make our community safer!
+        </p>
+
+
+    </div>
+
+
+</div>
+
+
+
+
+{% endblock body %}

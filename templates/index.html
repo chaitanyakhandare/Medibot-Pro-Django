@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medibot Pro | Your Personal Health Assistant</title>
+
+    <link rel="shortcut icon" href="/static/heart-beat.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="/static/style.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/futura-font@1.0.0/styles.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+
+
+<body>
+    <div class="main">
+
+        <div class="nav">
+            <a href="/" id="nav-logo">
+                <h2>MediBot Pro</h2>
+                <span class="material-symbols-outlined">ecg_heart</span>
+            </a>
+
+            <div class="nav-part2">
+                <a href="/medicalDiag">
+                    <h4>Medical Diagnosis Bot</h4>
+                </a>
+                <a href="/physiobot">
+                    <h4>Physiotherapy Bot</h4>
+                </a>
+                <a href="/support">
+                    <h4>Quick Support</h4>
+                </a>
+                <a href="/about">
+                    <h4>About Team</h4>
+                </a>
+
+                <a href="/report">
+                    <span class="material-symbols-outlined">report</span>
+                </a>
+                
+            </div>
+        </div>
+
+        <div class="content">
+
+            {% block body %}
+            
+            {% endblock body %}
+
+            
+            
+            <footer>
+                <div class="foot-panel-4">
+                    <ul>
+                        <li>Privacy Policy</li>
+                        <li>|</li>
+                        <li>Disclaimer</li>
+                        <li>|</li>
+                        <li>Contact</li>
+                    </ul>
+                    <span>© Copyright 2023. Medibots.com, Inc. All Rights Reserved</span>
+                </div>
+            </footer>
+            
+        </div>
+
+
+
+</body>
+</html>
