@@ -286,9 +286,12 @@ body {
 }
 
 .input-select-css {
-    padding: 0.4vw 1.2vw;
+    height: 2.5vw;
+    width: 10vw;
+    padding: 0.4vw 0.7vw;
     border-radius: 10px;
     margin: 0vw 1vw;
+    font-size: 0.8vw;
 }
 
 
@@ -546,6 +549,7 @@ body {
 }
 .div-linkedin span {
     color: #0088d1;
+    font-size: 1.2vw;
 }
 #linkedin-icon {
     width: 2vw;
@@ -642,8 +646,13 @@ footer {
 }
 
 
+/* MEDIA QUERIES */
 
-
+@media (max-width: 600px) {
+    .member-1 {
+        height: 20vh;
+    }
+}
 
 
 
