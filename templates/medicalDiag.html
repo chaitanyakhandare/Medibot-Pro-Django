@@ -1,4 +1,6 @@
+
 {% extends "index.html" %}
+{% load static %}
 
 {% block body %}
 
@@ -66,7 +68,7 @@
     </div>
 
     <div class="medical-right">
-        <img src="https://drive.google.com/uc?export=view&id=1uU59iBqC3ianzIy3N9hrRkLXI7G3aqDp" alt="doctor Image">
+        <img src="/static/doctorImg2.png" alt="doctor Image">
     </div>
     
 </div>
@@ -83,7 +85,8 @@
 
     <div class="diagnosis-output-image">
 
-        <img src="https://drive.google.com/uc?export=view&id=1_3bkYZTdJn0rQFSSAwJzLX7JW-YXOk8x" alt="doctor output">
+        {% comment %} <img src="/static/diagOutput.png" alt="doctor output"> {% endcomment %}
+        <img src="{% static 'diagOutput.png' %}" alt="doctor output">
     </div>
 </div>
     
