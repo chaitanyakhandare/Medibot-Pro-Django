@@ -1,64 +1,30 @@
+
 from django.shortcuts import render, HttpResponse
 import requests
-import asyncio
-
 
 # its a general function not a view
-async def textGen(promptToPass):
+def textGen(promptToPass): 
+
     url = "https://api.worqhat.com/api/ai/content/v2"
+
     payload = {"question": promptToPass}
-
-    loop = asyncio.get_event_loop()
-
-    def make_request():
-        headers = {
-            "Authorization": "Bearer sk-551bcfd3e22f417092c5db23cca5aee9",
-            "Content-Type": "application/json",
-        }
-        response = requests.request(url, json=payload, headers=headers, timeout=10)
-        return response
-
-    response = await loop.run_in_executor(None, make_request)
-
-    if response.status_code == 200:
-        toJSON = response.json()
-        resultOutput = toJSON['content']
-    else:
-        resultOutput = f"Error: {response.status_code}"
-
-    return resultOutput
-
-
-async def generateImage(painType):
-    urlImg = "https://api.worqhat.com/api/ai/images/generate/v2"
-
-    payload = {
-        "output_type": "url",
-        "prompt": [painType],
-    }
-
     headers = {
         "Authorization": "Bearer sk-551bcfd3e22f417092c5db23cca5aee9",
         "Content-Type": "application/json",
     }
 
-    loop = asyncio.get_event_loop()
+    print("DOING REQUEST")
+    response = requests.request("POST", url, json=payload, headers=headers)
 
-    def make_request():
-        responseImg = requests.request(urlImg, json=payload, headers=headers, timeout=10)
-        return responseImg
-
-    responseImg = await loop.run_in_executor(None, make_request)
-
-    if responseImg.status_code == 200:
-        toImgJSON = responseImg.json()
-        exerciseimg = toImgJSON['content']
+    if response.status_code == 200:
+        toJSON = response.json()
+        # Main result 
+        resultOutput = toJSON['content']
+        print(resultOutput)
     else:
-        exerciseimg = responseImg.text
+        print("Error:", response.text)
 
-    return exerciseimg
-
-
+    return resultOutput
 
 
 
@@ -67,7 +33,7 @@ async def generateImage(painType):
 def home(request):
     return render(request, 'home.html')
 
-async def medicalDiag(request):
+def medicalDiag(request):
     if request.method == 'POST' :
         name = request.POST.get('name')
         age = request.POST.get('age')
@@ -80,7 +46,7 @@ async def medicalDiag(request):
         promptToPass = f"hello my name is {name}, age is {age}, and gender is {gender}. I'm suffering from {symptoms}, since past {duration} days. And that symptoms are {severity}. Please help me to provide information and name of the disease related to this symptoms"
 
         # text generation API output
-        textOutput = await textGen(promptToPass)
+        textOutput = textGen(promptToPass)
 
         context = {
             "output" : textOutput
@@ -92,7 +58,7 @@ async def medicalDiag(request):
 
 
 
-async def physiobot(request):
+def physiobot(request):
     if request.method == 'POST' :
         name = request.POST.get('name')
         age = request.POST.get('age')
@@ -104,11 +70,32 @@ async def physiobot(request):
 
         promptToPass = f"hello my name is {name}, age is {age}, and gender is {gender}. I'm suffering from {painType}, since past {duration} days. And that pain is {severity}. Please suggest me some exercises for week to cure this."
 
-        # Text generation API output
-        textOutput = await textGen(promptToPass)
+        # text generation API output
+        textOutput = textGen(promptToPass)
 
-        # Image generation API output
-        exerciseimg = await generateImage(painType)
+
+        # Image Generation
+        urlImg = "https://api.worqhat.com/api/ai/images/generate/v2"
+
+        payload2 = {
+            "output_type": "url",
+            "prompt": [painType],
+        }
+        headers = {
+        "Authorization": "Bearer sk-551bcfd3e22f417092c5db23cca5aee9",
+        "Content-Type": "application/json",
+        }
+
+        responseImg = requests.request("POST", urlImg, json=payload2, headers=headers)
+
+        if responseImg.status_code == 200:
+            toImgJSON = responseImg.json()
+            exerciseimg = toImgJSON['content']
+            print(exerciseimg)
+        else:
+            exerciseimg = responseImg.text
+            print("Error:", responseImg.text)
+
 
         context = {
             "output" : textOutput,
@@ -167,7 +154,3 @@ def about(request):
 
 def report(request):
     return render(request, 'report.html')
-
-
-
-
