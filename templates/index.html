@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,10 +7,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Medibot Pro | Your Personal Health Assistant</title>
+<!--   Main LOGO below   -->
+<!-- https://drive.google.com/uc?export=view&id=1purBXsBZAot_gN7eudfIjxgLruWp6U3h -->
+    
+    <link rel="shortcut icon" href="/static/heart-beat.png" type="image/x-icon">
 
-    <link rel="shortcut icon" href="https://drive.google.com/uc?export=view&id=1purBXsBZAot_gN7eudfIjxgLruWp6U3h" type="image/x-icon">
-
-    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
 
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/futura-font@1.0.0/styles.min.css">
