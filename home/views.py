@@ -74,32 +74,32 @@ def physiobot(request):
         textOutput = textGen(promptToPass)
 
 
-        # Image Generation
-        urlImg = "https://api.worqhat.com/api/ai/images/generate/v2"
+        # # Image Generation
+        # urlImg = "https://api.worqhat.com/api/ai/images/generate/v2"
 
-        payload2 = {
-            "output_type": "url",
-            "prompt": [painType],
-        }
-        headers = {
-        "Authorization": "Bearer sk-551bcfd3e22f417092c5db23cca5aee9",
-        "Content-Type": "application/json",
-        }
+        # payload2 = {
+        #     "output_type": "url",
+        #     "prompt": [painType],
+        # }
+        # headers = {
+        # "Authorization": "Bearer sk-551bcfd3e22f417092c5db23cca5aee9",
+        # "Content-Type": "application/json",
+        # }
 
-        responseImg = requests.request("POST", urlImg, json=payload2, headers=headers)
+        # responseImg = requests.request("POST", urlImg, json=payload2, headers=headers)
 
-        if responseImg.status_code == 200:
-            toImgJSON = responseImg.json()
-            exerciseimg = toImgJSON['content']
-            print(exerciseimg)
-        else:
-            exerciseimg = responseImg.text
-            print("Error:", responseImg.text)
+        # if responseImg.status_code == 200:
+        #     toImgJSON = responseImg.json()
+        #     exerciseimg = toImgJSON['content']
+        #     print(exerciseimg)
+        # else:
+        #     exerciseimg = responseImg.text
+        #     print("Error:", responseImg.text)
 
 
         context = {
             "output" : textOutput,
-            "exerciseimg" : exerciseimg
+            # "exerciseimg" : exerciseimg
         }
         return render(request, 'physiobot.html', context=context)
 
