@@ -15,7 +15,7 @@ async def textGen(promptToPass):
             "Authorization": "Bearer sk-551bcfd3e22f417092c5db23cca5aee9",
             "Content-Type": "application/json",
         }
-        response = requests.post(url, json=payload, headers=headers)
+        response = requests.post(url, json=payload, headers=headers, timeout=10)
         return response
 
     response = await loop.run_in_executor(None, make_request)
@@ -45,7 +45,7 @@ async def generateImage(painType):
     loop = asyncio.get_event_loop()
 
     def make_request():
-        responseImg = requests.post(urlImg, json=payload, headers=headers)
+        responseImg = requests.post(urlImg, json=payload, headers=headers, timeout=10)
         return responseImg
 
     responseImg = await loop.run_in_executor(None, make_request)
