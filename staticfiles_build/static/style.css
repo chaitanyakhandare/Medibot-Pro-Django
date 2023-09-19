@@ -520,6 +520,7 @@ body {
     align-items: center;
     gap: 1vw;
     color: black;
+    border: 2px solid black;
 }
 .member-1 hr {
     width: 25%;
@@ -653,6 +654,7 @@ footer {
         height: 20vh;
     }
 }
+
 
 
 
