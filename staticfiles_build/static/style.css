@@ -140,7 +140,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 1vw 1vw;
+    margin: 2vw 1vw;
     padding: 3vw 5vw 1vw 5vw;
     gap: 1vw;
 }
@@ -152,17 +152,16 @@ body {
     border-radius: 20px;
 }
 
-#home-welcome {
-    font-size: 1.6vw;
-    font-weight: 700;
-}
 
 #home-main-heading {
     font-size: 3.5vw;
     font-weight: 700;
     line-height: 5vw;
 }
-
+#home-welcome {
+    font-size: 1.6vw;
+    font-weight: 700;
+}
 #home-normal-text {
     font-size: 1.2vw;
     line-height: 2vw;
@@ -611,7 +610,7 @@ body {
 
 
 
-
+/* Footer copyright */
 
 footer {
     margin-top: 50px;
@@ -625,7 +624,7 @@ footer {
     height: 80px;
     width: 100%;
     background-color: var(--primarycolor);
-    font-size: 12px;
+    font-size: 10px;
     color: white;
 
 }
@@ -650,6 +649,52 @@ footer {
 /* MEDIA QUERIES */
 
 @media (max-width: 600px) {
+
+
+    .home-page {
+        height: 120%;
+        flex-direction: column-reverse;
+        justify-content: center;
+    }
+    
+    .home-left {
+        width: 90%;
+    }
+
+    .home-right {
+        width: 90%;
+        margin: 3vw 1vw;
+        padding: 5vw 5.5vw 2vw 5.5vw;
+    }
+    .home-right hr {
+        margin: 2.3vw 0vw;
+        width: 40%;
+    }
+
+    #home-main-heading {
+        font-size: 7vw;
+        line-height: 10vw;
+        margin-top: 1vw;
+        padding-top: 3vw;
+    }
+    #home-welcome {
+        font-size: 4.8vw;
+        margin: 1.8vw 0vw;
+    }
+    #home-normal-text {
+        font-size: 4vw;
+        line-height: 6vw;
+        padding: 2vw 1vw;
+    }
+
+    .bot-buttons h4 {
+        width: 50%;
+        font-size: 3vw;
+        padding: 2.5vw 3vw;
+        margin-bottom: 4vw;
+
+    }
+
     .member-1 {
         height: 20vh;
     }
