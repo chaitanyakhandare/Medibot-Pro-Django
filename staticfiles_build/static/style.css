@@ -33,6 +33,7 @@ body {
     align-items: center;
     gap: 0.5vw;
 }
+
 #nav-logo span {
     color: white;
     font-size: 2.4vw;
@@ -158,10 +159,12 @@ body {
     font-weight: 700;
     line-height: 5vw;
 }
+
 #home-welcome {
     font-size: 1.6vw;
     font-weight: 700;
 }
+
 #home-normal-text {
     font-size: 1.2vw;
     line-height: 2vw;
@@ -379,16 +382,19 @@ body {
     font-size: 1.4vw;
     color: rgb(32, 32, 32);
 }
+
 .support-info p {
     font-size: 2vw;
     font-weight: 700;
 }
+
 .support-info div {
     display: flex;
     align-items: center;
     gap: 1.5vw;
     margin: 1.5vw 0vw;
 }
+
 .support-info span {
     font-size: 3vw;
 }
@@ -482,14 +488,17 @@ body {
     gap: 1vw;
     font-size: 1.3vw;
 }
+
 .actual-feedback-form p {
     font-size: 2vw;
     margin: 0vw 0vw 1.2vw 0vw;
 }
+
 .actual-feedback-form textarea {
     height: 16vh;
     width: 22vw;
 }
+
 .actual-feedback-form button {
     width: 90%;
 }
@@ -522,12 +531,28 @@ body {
     color: black;
     border: 2px solid black;
 }
+
 .member-1 hr {
     width: 25%;
     margin-bottom: 1vw;
     border: 2px solid var(--primarycolor);
     border-radius: 30px;
 }
+
+.member-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1vw;
+}
+
+.img-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .profile-img {
     width: 50%;
     margin: 2vw 0vw;
@@ -535,10 +560,12 @@ body {
     border-radius: 50%;
     box-shadow: 1px 1px 15px gray;
 }
+
 .member-1 h4 {
     font-size: 1.6vw;
     margin-bottom: 0.5vw;
 }
+
 .member-1 p {
     font-size: 1.1vw;
 }
@@ -548,10 +575,12 @@ body {
     justify-content: center;
     align-items: center;
 }
+
 .div-linkedin span {
     color: #0088d1;
     font-size: 1.2vw;
 }
+
 #linkedin-icon {
     width: 2vw;
 }
@@ -578,11 +607,13 @@ body {
     justify-content: center;
     gap: 2vw;
 }
+
 .report-form p {
     font-size: 2vw;
     margin: 1vw 2vw;
     font-weight: 700;
 }
+
 .report-form button {
     width: 9vw;
 }
@@ -595,16 +626,19 @@ body {
     justify-content: center;
     padding: 2vw 2vw;
 }
+
 .report-right span {
     font-size: 2vw;
     vertical-align: -7px;
     margin-right: 0.5vw;
 }
+
 .report-right p {
     font-size: 1.5vw;
     margin: 1vw 0vw 1vw 0vw;
     font-weight: 700;
 }
+
 .report-right li {
     margin: 0.4vw 0vw;
 }
@@ -651,13 +685,13 @@ footer {
 
 @media (max-width: 600px) {
 
-
+    /* Home Page */
     .home-page {
         height: 120%;
         flex-direction: column-reverse;
         justify-content: center;
     }
-    
+
     .home-left {
         width: 90%;
     }
@@ -667,6 +701,7 @@ footer {
         margin: 3vw 1vw;
         padding: 5vw 5.5vw 2vw 5.5vw;
     }
+
     .home-right hr {
         margin: 2.3vw 0vw;
         width: 40%;
@@ -678,10 +713,12 @@ footer {
         margin-top: 1vw;
         padding-top: 3vw;
     }
+
     #home-welcome {
         font-size: 4.8vw;
         margin: 1.8vw 0vw;
     }
+
     #home-normal-text {
         font-size: 4vw;
         line-height: 6vw;
@@ -696,12 +733,60 @@ footer {
 
     }
 
-    .member-1 {
-        height: 20vh;
+
+    /* About Page */
+
+    .about-page {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
+
+
+    .member-1 {
+        height: 18vh;
+        width: 85%;
+        flex-direction: row;
+        justify-content: center;
+        gap: 0vw;
+    }
+
+    .img-div {
+        width: 45%;
+    }
+    .profile-img {
+        width: 70%;
+    }
+
+    .member-1 hr {
+        width: 30%;
+        margin-top: 0.8vw;
+        margin-bottom: 1.5vw;
+        border: 1.4px solid var(--primarycolor);
+    }
+
+    .member-info {
+        width: 50%;
+        padding-right: 2vw;
+    }
+    .member-info h4 {
+        display: flex;
+        font-size: 3.6vw;
+    }
+    .member-info p {
+        font-size: 2.4vw;
+    }
+
+    .div-linkedin {
+        margin-top: 1vw;
+    }
+    .div-linkedin span {
+        font-size: 2.4vw;
+    }
+    #linkedin-icon {
+        width: 4vw;
+    }
+
+
+
 }
-
-
-
-
-
