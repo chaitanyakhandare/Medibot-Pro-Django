@@ -24,6 +24,7 @@ body {
     width: 100%;
     font-family: 'FuturaBT-medium';
     background-color: var(--backgroundcolor);
+    -webkit-font-smoothing: antialiased;
 }
 
 #nav-logo {
@@ -398,6 +399,7 @@ body {
 
 .support-info span {
     font-size: 3vw;
+    color: var(--primarycolor);
 }
 
 
@@ -490,6 +492,10 @@ body {
     font-size: 1.3vw;
 }
 
+#feedback-full-name {
+    display: inline-block;
+}
+
 .actual-feedback-form p {
     font-size: 2vw;
     margin: 0vw 0vw 1.2vw 0vw;
@@ -520,10 +526,10 @@ body {
 
 .member-1 {
     width: 24%;
-    height: 90%;
+    height: 75%;
     margin: 3vw 2vw;
     border-radius: 15px;
-    box-shadow: 4px 4px 15px gray;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.4);
     background-color: #FFEADD;
     display: flex;
     flex-direction: column;
@@ -559,7 +565,7 @@ body {
     margin: 2vw 0vw;
     border: 2px solid black;
     border-radius: 50%;
-    box-shadow: 1px 1px 15px gray;
+    box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.4);
 }
 
 .member-1 h4 {
@@ -649,7 +655,7 @@ body {
 /* Footer copyright */
 
 footer {
-    margin-top: 50px;
+    margin-top: 5px;
 }
 
 .foot-panel-4 {
@@ -686,11 +692,11 @@ footer {
 
 @media (max-width: 600px) {
 
-    .content {
-        height: calc(100% + 30px);
-    }
-
     /* Navbar */
+
+    .content {
+        height: calc(100% - 80px);
+    }
 
     .nav {
         height: 80px;
@@ -817,9 +823,14 @@ footer {
     #linkedin-icon {
         width: 4vw;
     }
-
-
+    
+    
     /* Report Page */
+
+    .content:has(.report-page) { /* VERY IMP :has */
+        height: calc(100% + 100px);
+    }
+
     .report-page {
         flex-direction: column;
         height: 100%;
@@ -893,10 +904,141 @@ footer {
     }
 
 
+    /* Support Page */
+
+    .content:has(.support-page) { /* VERY IMP :has */
+        height: calc(170%);
+    }
+
+    .support-page {
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .support-info {
+        width: 85%;
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 3vw 1.5vw 6vw 1.5vw;
+        padding: 2vw 2vw 1vw 2vw;
+        font-size: 5vw;
+        line-height: 7vw;
+    }
+    .support-info p {
+        font-size: 7vw;
+        margin: 2vw 0vw 3vw 0vw;
+        padding: 2vw 0vw;
+    }
+    .support-info span {
+        font-size: 8vw;
+        margin: 1vw 0vw;
+        padding: 0vw 2vw;
+        color: var(--primarycolor);
+    }
+    
+    .support-right {
+        width: 90%;
+        height: 140%;
+        margin: 4vw 1vw 1vw 1vw;
+        padding: 3vw 1vw;
+        display: flex;
+        justify-content: center;
+    }
+
+    .support-right-bot {
+        box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.4);
+        height: 100%;
+        padding: 5vw 5vw 5vw 8vw;
+        font-size: 5.5vw;
+        gap: 1vw;
+    }
+    .support-right-bot form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 3vw;
+    }
+    .support-right-bot textarea {
+        height: 40vw;
+        border-radius: 10px;
+        font-size: 3.5vw;
+        padding: 2vw 3vw;
+    }
+    .support-right-bot button {
+        margin: 3vw 0vw 2vw 0vw;
+        font-size: 3.5vw;
+        padding: 2vw 0vw;
+    }
+    
+    .any-bot-output {
+        height: 40%;
+        width: 90%;
+        padding: 2vw 3vw;
+        font-size: 3.5vw;
+        border-radius: 10px;
+    }
+    .any-bot-output p {
+        font-size: 3.5vw;
+    }
+    
+    
+    /* Feedback Form */
+    
+    .feedback-form {
+        height: 30%;
+        width: 100%;
+    }
+    
+    .actual-feedback-form {
+        box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.4);
+        width: 90%;
+        font-size: 5vw;
+        padding: 4vw 4vw;
+        justify-content: start;
+    }
+    .actual-feedback-form p {
+        margin: 2vw 1vw 4vw 3vw;
+        font-size: 5.5vw;
+    }
+    .actual-feedback-form .input-name-css {
+        height: 9vw;
+        width: 95%;
+        padding: 1vw 3vw;
+        border-radius: 5px;
+        font-size: 3.5vw;
+        font-weight: 700;
+    }
+    
+    .actual-feedback-form textarea {
+        height: 16vh;
+        width: 95%;
+        padding: 3vw 3vw;
+        font-size: 3.5vw;
+        font-weight: 700;
+    }
+
+    .actual-feedback-form button {
+        width: 90%;
+        margin-left: 3vw;
+        margin-bottom: 3vw;
+        font-size: 3.5vw;
+        padding: 2vw 0vw;
+    }
+    
+    
+    #feedback-full-name {
+        display: none;
+    }
+    #feedback-describe {
+        display: none;
+    }
 
 
     
-}
+}   /* End of Media Queries */
 
 
 
