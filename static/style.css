@@ -520,7 +520,7 @@ body {
 
 .member-1 {
     width: 24%;
-    height: 90%;
+    height: 70%;
     margin: 3vw 2vw;
     border-radius: 15px;
     box-shadow: 4px 4px 15px gray;
@@ -649,7 +649,7 @@ body {
 /* Footer copyright */
 
 footer {
-    margin-top: 50px;
+    margin-top: 5px;
 }
 
 .foot-panel-4 {
