@@ -105,7 +105,7 @@ body {
 /* C O N T E N T  */
 
 .content {
-    height: calc(100% - 90px);
+    height: calc(100% + 90px);
     width: 100%;
     position: relative;
     display: flex;
@@ -254,8 +254,8 @@ body {
     margin: 0vw 1vw;
     font-family: 'Courier New', Courier, monospace;
     color: black;
-    font-family: 700;
-    font-size: 1vw;
+    font-weight: 550;
+    font-size: 1.3vw;
     border-radius: 10px;
     border: 1px solid black;
 }
@@ -267,7 +267,7 @@ body {
     margin: 0vw 1vw;
     font-family: 'Courier New', Courier, monospace;
     color: black;
-    font-family: 500;
+    font-weight: 600;
     font-size: 1vw;
     border-radius: 10px;
     border: 1px solid black;
@@ -282,6 +282,7 @@ body {
     color: black;
     font-family: 700;
     font-size: 1vw;
+    font-weight: 600;
     border-radius: 10px;
     border: 1px solid black;
     word-wrap: break-word;
@@ -293,7 +294,7 @@ body {
     padding: 0.4vw 0.7vw;
     border-radius: 10px;
     margin: 0vw 1vw;
-    font-size: 0.8vw;
+    font-size: 1vw;
 }
 
 
@@ -681,9 +682,38 @@ footer {
 }
 
 
-/* MEDIA QUERIES */
+/*  M E D I A QUERIES */
 
 @media (max-width: 600px) {
+
+    .content {
+        height: calc(100% + 30px);
+    }
+
+    /* Navbar */
+
+    .nav {
+        height: 80px;
+    }
+    .nav h2 {
+        font-size: 3.5vw;
+    }
+
+    #nav-logo {
+        margin-left: 2vw;
+        gap: 0vw;
+    }
+    #nav-logo span {
+        font-size: 5.5vw;
+    }
+
+    .nav h4 {
+        font-size: 1.5vw;
+    }
+
+    .nav span {
+        font-size: 5vw;
+    }
 
     /* Home Page */
     .home-page {
@@ -738,8 +768,9 @@ footer {
 
     .about-page {
         flex-direction: column;
-        justify-content: center;
+        justify-content: space-evenly;
         align-items: center;
+        gap: 0vw;
     }
 
 
@@ -788,5 +819,90 @@ footer {
     }
 
 
+    /* Report Page */
+    .report-page {
+        flex-direction: column;
+        height: 100%;
+    }
 
+    .report-form {
+        width: 90%;
+        height: 40%;
+        justify-content: center;
+        margin-top: 5vw;
+        margin-bottom: 5vw;
+    }
+    
+    .report-form .input-name-css {
+        height: 6vw;
+        width: 35vw;
+        font-size: 3.5vw;
+        margin: 0vw 2.5vw;
+        padding: 2vw 3vw;
+        font-weight: 700;
+    }
+
+    .report-form .input-symptoms {
+        margin-bottom: 0vw;
+    }
+    .report-form .input-symptoms-css {
+        width: 35vw;
+        height: 15vw;
+        font-size: 2.5vw;
+        padding: 2vw 3vw;
+        font-weight: 600;
+        margin-left: 2vw;
+    }
+
+    .report-form p {
+        font-size: 6vw;
+        margin-top: 2vw;
+        margin-bottom: 2.5vw;
+    }
+    .report-form div {
+        font-size: 4vw;
+    }
+    .report-form button {
+        width: 23vw;
+        height: 6.5vw;
+        font-size: 3vw;
+    }
+
+
+    .report-right {
+        width: 85%;
+        height: 60%;
+        margin: 3vw 0vw 0vw 0vw;
+    }
+    .report-right span {
+        font-size: 5.4vw;
+    }
+    .report-right p {
+        font-size: 4.5vw;
+    }
+    .report-right ul {
+        margin-left: 4vw;
+    }
+    .report-right li {
+        font-size: 3.5vw;
+    }
+
+    #report-normal-text {
+        font-size: 3.5vw;
+        font-weight: 500;
+    }
+
+
+
+
+    
 }
+
+
+
+
+
+
+
+
+
