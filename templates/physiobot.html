@@ -19,17 +19,17 @@
             <div class="input-fields">
                 
                 <div class="input-name">
-                    Name
-                    <input type="text" name="name" id="name" class="input-name-css" required>
+                    <p id="normal-text-medical">Name</p>
+                    <input type="text" name="name" id="name" class="input-name-css" placeholder="Enter your name" required>
                 </div>
                 
                 <div class="input-age">
-                    Age
-                    <input type="number" name="age" id="age" class="input-number-css" required>
+                    <p id="normal-text-medical">Age</p>
+                    <input type="number" name="age" id="age" class="input-number-css" placeholder="Age" required>
                 </div>
                 
                 <div class="input-gender">
-                    Gender
+                    <p id="normal-text-medical">Gender</p>
                     <select name="gender" id="gender" class="input-select-css" required>
                         <option selected="selected" disabled>Choose Gender</option>
                         <option value="male">Male</option>
@@ -39,17 +39,17 @@
                 </div>
                 
                 <div class="input-symptoms">
-                    Type of pain you are suffering from 
-                    <textarea name="paintype" rows="14" cols="12" wrap="soft" class="input-symptoms-css" placeholder="knee pain, back pain, etc" required></textarea>
+                    <p id="normal-text-medical">Type of pain you are suffering from</p>
+                    <textarea name="paintype" rows="14" cols="12" wrap="soft" class="input-symptoms-css" placeholder="Type of pain you are suffering from (knee pain, back pain, etc)" required></textarea>
                 </div>
                 
                 <div class="input-duration">
-                    Duration of your Symptoms (in days)
-                    <input type="number" name="duration" id="duration" class="input-number-css" required>
+                    <p id="normal-text-medical">Duration of your Symptoms (in days)</p>
+                    <input type="number" name="duration" id="duration" class="input-number-css" placeholder="Duration of your Symptoms (in days)" required>
                 </div>
                 
                 <div class="input-severity">
-                    Severity of your symptoms
+                    <p id="normal-text-medical">Severity of your symptoms</p>
                     <select name="severity" id="severity" class="input-select-css" required>
                         <option selected="selected" disabled>Choose Severity</option>
                         <option value="low">Low</option>
@@ -72,7 +72,7 @@
 </div>
 
 
-<p id="diag-result-text">Result will be shown after clicking on Find Result button.:</p>
+<p id="diag-result-text">Clicking on Find button to get result:</p>
 <div class="diagnosis-output">
 
     <div class="diagnosis-actual-output">
@@ -83,7 +83,7 @@
 
     <div class="diagnosis-output-image">
 
-        <img src="{{ exerciseimg }}" alt="ImageCon V2 API is used here to generate images releted to pain. But facing 504 error.">
+        <img src="{{ exerciseimg }}">
     </div>
 </div>
     
