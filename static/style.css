@@ -777,7 +777,7 @@ footer {
     /* Medical Diagnose Page */
 
     .content:has(.medical-container) {
-        height: 150%;
+        height: 180%;
     }
 
     .bot-info {
