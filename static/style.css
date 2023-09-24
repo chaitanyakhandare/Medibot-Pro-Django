@@ -885,8 +885,8 @@ footer {
     }
 
     .diagnosis-actual-output {
-        border-radius: 9px;
         width: 85%;
+        border-radius: 9px;
         font-size: 4vw;
     }
 
@@ -901,7 +901,7 @@ footer {
     /* Support P A G E */
 
     .content:has(.support-page) { /* VERY IMP :has */
-        height: calc(170%);
+        height: calc(250%);
     }
 
     .support-page {
